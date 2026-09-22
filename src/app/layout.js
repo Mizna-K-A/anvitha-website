@@ -71,14 +71,15 @@ export const metadata = {
     icon: "/favicon.ico",
   },
   
-  // Theme Color
+  // Additional metadata
+  category: "Technology",
+};
+
+export const viewport = {
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "#ffffff" },
     { media: "(prefers-color-scheme: dark)", color: "#000000" },
   ],
-  
-  // Additional metadata
-  category: "Technology",
 };
 
 export default function RootLayout({ children }) {
