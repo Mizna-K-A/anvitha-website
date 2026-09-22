@@ -1,0 +1,25 @@
+services:
+  web:
+    container_name: anvitha_website_container
+    build:
+      context: .
+      dockerfile: dockerfile
+    image: 727516060995.dkr.ecr.ap-south-1.amazonaws.com/anvitha-website:latest
+    restart: unless-stopped
+    ports:
+      - "4444:4444"
+    expose:
+      - "4444"
+    environment:
+      - NODE_ENV=production
+      - PORT=4444
+      - HOSTNAME=0.0.0.0
+    env_file:
+      - .env.local
+
+    networks:
+      - proxy
+
+networks:
+  proxy:
+    external: true
